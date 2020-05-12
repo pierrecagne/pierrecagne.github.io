@@ -1,22 +1,53 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en-US">
   
   <head>
     <meta charset="utf-8"/>
-    <meta name="description" content="Pierre Cagne's GitHub page">
+    <meta name="description" content="Professional webpage">
     <meta name="author" content="Pierre Cagne">
+    <link rel="stylesheet" type="text/css" href="style/style.css"/>
+    
+    <title>Pierre Cagne &mdash; Homepage</title>
   </head>
 
   <body>
-    <header>
-    </header>
+    <header id="sidebar"></header>
+    <h1>Home</h1>
+    
+    <div class="main">
 
-    Under construction...
+      <section>
+	<expand-element id="whoami" active="true">
+	  <h2 slot="steady" class="before-expand">Who am I?</h2>
+	  <img src="ressources/id_picture.png" alt="expanded-id-picture" slot="expand"></img>
+	</expand-element>
+	
+    	<p>My last position ha been as a researcher at Universitetet i
+    	  Bergen (Norway). My work focuses currently on exploring the
+    	  consequences of univalence for ordinary mathematics in
+    	  homotopy type theory. My research interests feature also
+    	  categorical logic and homotopical algebra.</p>
+	
+    	<p>I defended my PhD thesis on December 7th, 2018. It was
+    	  co-supervised
+    	  by <a href="http://www.pps.univ-paris-diderot.fr/~mellies/">Paul-André
+    	    Melliès</a> (IRIF, Université Paris Diderot)
+    	  and <a href="http://math.unice.fr/~cberger/">Clemens
+    	    Berger</a> (Laboratoire J.A. Dieudonné, Univeristé de
+    	  Nice). Find more information on
+    	  my <a href="research.html">research page</a>.</p>
+	
+    	<hr/>
+	
+    	<span class="sidenote">More information on
+    	  my <a href="ressources/cv.pdf">CV</a>.</span>
+      </section>
+    </div>
     
     <footer>
     </footer>
-      
+
+    <script type="module" src="src/Index.js"></script>
   </body>
-  
 </html>

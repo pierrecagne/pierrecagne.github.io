@@ -1,0 +1,12 @@
+export class expandableImage extends HTMLElement {
+    constructor() {
+	super();
+
+	this.active = this.getAttribute('active') || false;
+	
+	this.appendChild(document.createTextNode(this.innerText));
+
+	this.img = document.createElement('img');
+	this.img.src = this.getAttribute('src');
+    }
+}

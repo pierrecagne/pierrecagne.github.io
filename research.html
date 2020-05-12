@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+  
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Professional webpage">
+    <meta name="author" content="Pierre Cagne">
+    <link rel="stylesheet" type="text/css" href="style/style.css"/>
+    
+    <title>Pierre Cagne &mdash; Research</title>
+  </head>
+
+  <body>
+    <header id="sidebar"></header>
+    <h1>Research</h1>
+    
+    <div class="main">
+
+      <section>
+	<h2>Conferences and workshops</h2>
+	<ul>
+	  <li>Category Theory 2017 (Vancouver), as part of
+	  the <a href="http://www.math.jhu.edu/~eriehl/kanII/">Kan
+	  Extension Seminar II</a> : <a href="CT2017.pdf">When
+	  computational monads go clubbing</a></li>
+	  <li>Category Theory 2016 (Halifax)
+	  : <a href="CT2016.pdf">Bifibrations of model
+	  categories</a></li>
+	</ul>
+      </section>
+      
+      
+      <section>
+	<h2>PhD thesis</h2>
+	
+	<p>
+	  Here is my PhD thesis
+	  <object class="title">
+	    <a href="cagne_thesis.pdf">Towards a homotopical algebra of dependent types</a>
+	  </object>
+	  (And the defense Beamer slides are <a href="phd_defense_slides.pdf">there</a>.)
+
+	  <br/><br/>
+
+	  It was co-directed by Paul-André Melliès, computer scientist
+	  at Université Paris Diderot, and Clemens Berger,
+	  mathematician at Université de Nice. I defended on December
+	  7th, 2018 in front of the jury composed with: Clemens Berger
+	  (advisor), Hugo Herbelin (president), André Joyal
+	  (reviewer), Peter LeFanu Lumsdaine (examiner), Paul-André
+	  Melliès (advisor), Simona Paoli (examiner), Emily Riehl
+	  (examiner) and Thomas Streicher (reviewer).
+	</p>
+
+	<p>
+	  Very broadly, my thesis is a quest for categorical
+	  structures that can be used to interprete Martin-Löf's type
+	  theories and variants of such. One of the main goal is to
+	  reconcile Lawvere's view on categorical logic that he
+	  developed through hyperdoctrines and the likes with the
+	  type-as-fibrations philosophy initiated by Awodey and Warren
+	  and greatly advocated by Voevodsky in the description of its
+	  model of univalence in the category of simplicial sets.
+	</p>
+	<p>
+	  In the process, with collaborators, we have designed a
+	  structure mixing Grothendieck bifibrations and model
+	  categories, and a theorem allowing for a generic
+	  construction of these structures. This result can be
+	  interpreted as a Grothendieck construction for pseudo
+	  functors valued in the 2-category of Quillen model
+	  structures, left Quillen functors between them and natural
+	  transformations. Hence we named Quillen bifibrations the new
+	  structures. The theorem about Quillen bifibrations can be
+	  understood without any reference to type theory and applies
+	  in particular to the construction of Reedy model
+	  structures. Homotopy categories of Quillen bifibrations have
+	  a peculiar behaviour and can be constructed in two
+	  successives localizations. What is odd is that both
+	  localization can be obtained by Quillen's homotopy quotient
+	  of a model category. The only subtility is that the
+	  intermediary model category might not have all pushouts or
+	  pullbacks: based on works by Jeff Egger, we show that
+	  Quillen's construction of the localization can still be
+	  carried out in that larger settings. In the study of thes
+	  homotopy category for Quillen bifibrations, it appears that
+	  there should be a variation on the structure of Grothendieck
+	  bifibration where (some of) the push functors are only
+	  defined up to homotopy.
+	</p>
+	<p>
+	  The last part of the work I conducted in this thesis is an
+	  attempt to use the intuition developped through Quillen
+	  bifibrations in order to propose a treatment of Joyal's
+	  tribes in a fibrational setting. Tribes are minimalistic
+	  structures to interprete HoTT. They are reminiscent of
+	  Brown's categories of fibrant objects. Through the
+	  fibrational view, path objects in tribes can be understood
+	  as a result of "pushing" the terminal dependent type above a
+	  base type A over its diagonal. However this push is of the
+	  previously mentioned flavour: the universal property it
+	  satisfies is a homotopy universal property. Nevertheless
+	  this understanding of tribes makes a clear connection with
+	  Lawvere's view of the equality predicates in first-order
+	  logic (or even in extensional dpendent type theory): in a
+	  hyperdoctrine, the equality predicate for objects of sort A
+	  is the image (push) over the diagonal of the total predicate
+	  on A. In this work, we have designed a fibrational structure
+	  that generalizes tribes. To do so, we develop a framework
+	  for <em>relative</em> (orthogonal or weak) factorization
+	  systems: this is a 2-level version of the usual
+	  factorization systems, from which we recover the usual
+	  notion in degenerate cases.
+	</p>
+	<!-- <p> -->
+	<!--   The projected title of my thesis is -->
+	<!--   <object class="title">Generalized species, linear logic and -->
+	<!--     enriched homotopy theory</object> -->
+	  
+	<!--   It is co-directed by Paul-André Melliès, computer scientist -->
+	<!--   at Université Paris Diderot, and Clemens Berger, -->
+	<!--   mathematician at Université de Nice. It began in October -->
+	<!--   2015 and is supposed to be finished by October 2018. -->
+	<!-- </p> -->
+
+	<!-- <p>Let me give a quick introduction about it. The bicategory -->
+	<!-- of distributors, introduced by Jean Bénabou, can interprete -->
+	<!-- linear logic through the following semantic of the exponential -->
+	<!-- comonad: any small category \(\mathcal A\) gets mapped to the -->
+	<!-- small category \(S\mathcal A\) -->
+
+	<!--   <ul> -->
+	<!--     <li> whose objects are finite tuples \((a_1,\ldots,a_n)\) -->
+	<!--       of objects of \(\mathcal A\),</li> -->
+	<!--     <li> and whose morphisms \((a_1,\ldots,a_m) \to -->
+	<!--       (a'_1,\ldots,a'_n)\) are defined only for \(m=n\) and -->
+	<!--       are tuples \((\sigma,f_1,\ldots,f_n)\) where \(\sigma\) -->
+	<!--       is a permutation of \(\{1,\ldots,n\}\) and each \(f_i\) -->
+	<!--       is a morphism \(a_i \to a'_{\sigma(i)}\) in \(\mathcal -->
+	<!--       A\).</li> -->
+	<!--   </ul> -->
+	<!--   As such, the co-Kleisli bicategory associated to the comonad -->
+	<!--   \(S\) is the bicategory of generalized species of -->
+	<!--   structures, introduced by Martin Hyland and its -->
+	<!--   school. Coincidentally, the monads (in Street's sense) of -->
+	<!--   this bicategory are the set-theoretic operads with colours -->
+	<!--   in \(\mathcal A\). -->
+	<!-- </p> -->
+
+	<!-- <p> -->
+	<!--   The goal of this thesis is to bring this bridge between -->
+	<!--   operads and intuitionnistic linear proofs to a homotopical -->
+	<!--   framework so as to match topological/simplicial coloured -->
+	<!--   operads with some sort of homotopical linear logic. -->
+	<!-- </p> -->
+      </section>
+
+
+      <section>
+	<h2>Undergraduate research experience</h2>
+
+	<p>
+	  <h3>Master of Research in CS</h3> I graduated from
+	  &Eacute;cole Normale Supérieure in Computer Science by doing
+	  a 5 month research internship under the supervision of
+	  Paul-André Melliès. During it I designed a categorical
+	  framework, based on monads with arities, suitable to model
+	  memory allocation and deallocation in a quantum program
+	  (more generally in a program with linear ressource
+	  managment). Get
+	  the <a href="mpri_m2_cagne_report.pdf">mémoire</a> (in
+	  french) and the
+	  <a href="mpri_m2_slides.pdf">oral presentation</a>.
+	</p>
+	  
+	<p>
+	  <h3>Master of Research in
+	    Mathematics</h3> <a href="memoire_m2_cagne.pdf">Here</a>
+	    (in french) is my master thesis in mathematics. It was
+	    directed
+	    by <a href="http://webusers.imj-prg.fr/~georges.maltsiniotis/">Georges
+	    Maltsiniotis</a> and focused on the proof that
+	  <a href="http://www.math.univ-toulouse.fr/~dcisinsk/">Denis-Charles
+	    Cisinski</a> gave of a conjecture made by Grothendieck in
+	    Pursuing Stacks: any basic localizer contains the weak
+	    homotopy equivalences.
+	</p>
+
+	<p>
+	  <h3>Master of Research in Mathematics (1st
+	    year)</h3> <a href="cagne_rapport_ter_m1.pdf">This</a> (in
+	    french) is my first year master's thesis, about the use of
+	    Grothendieck toposes to prove the independance of the
+	    Continuum Hypothesis relatively to the theory ZFC. (There
+	    might be some imprecisions and wrong results too.)
+	</p>
+	  
+	<p>
+	  <h3>Master of Research in CS (1st year)</h3> The first year
+	  of the Master of Research at &Eacute;cole Normale Supérieure
+	  requires a research intership that I have performed at
+	  Université du Québec à Montréal in team LaCIM under the
+	  direction
+	  of <a href="http://www.lacim.uqam.ca/~brlek/">Sre&#269;ko
+	  Brlek</a>. The partially achived goal was to prove a
+	  conjecture about the conservation of the tiling property for
+	  a polyomino under some transformations.  There is a report
+	  that I will put here someday... maybe... if I finally fix
+	  some issues in there.  But you can have a look at
+	  the <a href="gtgeo2013/main.pdf">presentation</a> (in
+	  english) of the result I did in a workshop.
+	</p>
+	
+	<p>
+	  <h3>Bachelor's Degree Internship</h3> I completed my
+	  bachelor degree in Computer Science at &Eacute;cole Normale
+	  Supérieure, that requires a 2 to 3 mounth research
+	  internship. I worked at LORIA (Nancy) in team ADAGIo under
+	  the supervision
+	  of <a href="http://www.loria.fr/~jamet/index.html">Damien
+	  Jamet</a> and Eric Domenjoud. It was about counting and
+	  generating local configurations of discretized planes. The
+	  internship included
+	  a <a href="internship_l3/index.html">coding part</a> and a
+	  theoretical one. Get
+	  the <a href="internship_l3/report.pdf">report</a> (in
+	  french).
+	</p>
+	
+      </section>
+    </div>
+
+    <footer>
+      <license-footer type="CC-BY-SA 4.0"></license-footer>
+    </footer>
+    
+    <script type="module" src="src/Index.js"></script>
+  </body>
+</html>
