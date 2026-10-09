@@ -1,0 +1,86 @@
+/* The one-page card: portrait in a circle, a round link on each side, name underneath.
+   Colours and fonts come from tokens.css (the same as the main website). */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 32px 16px;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--serif);
+  -webkit-font-smoothing: antialiased;
+}
+:focus-visible { outline: 2px solid var(--hi); outline-offset: 3px; }
+
+main { display: grid; justify-items: center; gap: 28px; text-align: center; }
+
+.row { display: flex; align-items: center; gap: clamp(18px, 6vw, 56px); }
+
+.portrait {
+  display: block;
+  width: clamp(150px, 42vw, 240px);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  background: var(--sunk);
+  outline: 1.5px solid var(--rule);   /* a thin ring around the photo, like the circle of the favicon */
+  outline-offset: 8px;
+}
+
+/* a round icon with a mono label underneath */
+.link {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  border-radius: 12px;
+}
+.link .disc {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  transition: border-color .15s, background-color .15s, color .15s;
+}
+.link svg { width: 26px; height: 26px; fill: currentColor; }
+.link .label {
+  font: 500 11px/1 var(--mono);
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.link:hover .disc, .link:focus-visible .disc { border-color: var(--structure); background: var(--structure-soft); color: var(--structure); }
+.link:hover .label, .link:focus-visible .label { color: var(--structure); }
+.link:focus-visible { outline-offset: 6px; }
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 1.4rem + 2vw, 2.5rem);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+.role {
+  margin: 10px 0 0;
+  font: 12px/1.5 var(--mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--structure);
+}
+.role span { display: inline-block; }   /* wrap between the two parts, never inside one */
+
+@media (prefers-reduced-motion: reduce) { .link .disc { transition: none; } }
+@media (max-width: 380px) {
+  .link .disc { width: 50px; height: 50px; }
+  .link svg { width: 22px; height: 22px; }
+}

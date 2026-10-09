@@ -1,0 +1,82 @@
+/* Design tokens: the only place where colours and font families are written down.
+   Copied from the main website (www.normalesup.org/~cagne), which shares the CS 2490 textbook palette. */
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap");
+
+:root {
+  --serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* neutrals */
+  --ground: #f3f4f6;   /* page background */
+  --surface: #ffffff;  /* cards, blocks */
+  --sunk: #f7f8fa;     /* drawing canvases, wells */
+  --ink: #161a1f;
+  --muted: #5a6371;
+  --faint: #8b95a5;
+  --rule: #d7dbe1;
+  --chip: #e9edf1;
+  --code-bg: #eef1f5;
+
+  /* semantic colours, matching the slides' palette (see CLAUDE.md) */
+  --structure: #2f33a6;      /* csblue = beamer structure: defined terms, links, definitions */
+  --structure-soft: #e8e9f7;
+  --warn: #b8002e;           /* csred: warnings, gotchas */
+  --warn-soft: #fbe8ec;
+  --yes: #0a7a3c;            /* csgreen: accept / yes */
+  --yes-soft: #e3f4ea;
+  --no: #6a7600;             /* csyellow: reject / no */
+  --no-soft: #f2f6d9;
+
+  /* interaction */
+  --hi: #e69f00;             /* current selection / current state (amber halo) */
+
+  color-scheme: light;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ground: #111418;
+    --surface: #181c21;
+    --sunk: #14181d;
+    --ink: #e4e7eb;
+    --muted: #9aa4b1;
+    --faint: #6f7a89;
+    --rule: #2b3139;
+    --chip: #1d232c;
+    --code-bg: #20262d;
+    --structure: #a3a8f0;
+    --structure-soft: #1d1f3a;
+    --warn: #ff8aa0;
+    --warn-soft: #3a1720;
+    --yes: #5fd394;
+    --yes-soft: #14301f;
+    --no: #d4e85a;
+    --no-soft: #2a2e10;
+    --hi: #f2b544;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #111418;
+  --surface: #181c21;
+  --sunk: #14181d;
+  --ink: #e4e7eb;
+  --muted: #9aa4b1;
+  --faint: #6f7a89;
+  --rule: #2b3139;
+  --chip: #1d232c;
+  --code-bg: #20262d;
+  --structure: #a3a8f0;
+  --structure-soft: #1d1f3a;
+  --warn: #ff8aa0;
+  --warn-soft: #3a1720;
+  --yes: #5fd394;
+  --yes-soft: #14301f;
+  --no: #d4e85a;
+  --no-soft: #2a2e10;
+  --hi: #f2b544;
+}
