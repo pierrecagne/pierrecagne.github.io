@@ -1,3 +1,3 @@
 # pierrecagne.github.io
 
-A one-page card with links to my GitHub profile and to my website, https://www.normalesup.org/~cagne/.
+A one-page card: my portrait, with a ring of links to my website, email, GitHub, ORCID, arXiv, DBLP and zbMATH, and to my photographs on Instagram.

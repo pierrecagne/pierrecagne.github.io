@@ -1,4 +1,4 @@
-/* The one-page card: portrait in a circle, a round link on each side, name underneath.
+/* The one-page card: portrait in a circle, a ring of round links around it, name underneath.
    Colours and fonts come from tokens.css (the same as the main website). */
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -17,13 +17,23 @@ body {
 }
 :focus-visible { outline: 2px solid var(--hi); outline-offset: 3px; }
 
-main { display: grid; justify-items: center; gap: 28px; text-align: center; }
+main { display: grid; justify-items: center; gap: 22px; text-align: center; }
 
-.row { display: flex; align-items: center; gap: clamp(18px, 6vw, 56px); }
+/* ---------- the ring ---------- */
+.ring {
+  --d: min(92vw, 440px);              /* diameter of the whole ring, labels included */
+  --r: calc(var(--d) / 2 - 52px);     /* distance from the centre to the middle of each disc */
+  --disc: 54px;
+  position: relative;
+  width: var(--d);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+}
 
 .portrait {
   display: block;
-  width: clamp(150px, 42vw, 240px);
+  width: calc(var(--d) * .44);
   height: auto;
   aspect-ratio: 1;
   object-fit: cover;
@@ -33,18 +43,44 @@ main { display: grid; justify-items: center; gap: 28px; text-align: center; }
   outline-offset: 8px;
 }
 
-/* a round icon with a mono label underneath */
+/* Each item sits at the centre of the ring and its link is pushed out to its angle, counted
+   clockwise from the right: --start for the first link, then evenly spaced. When adding or
+   removing a link, update --n (and --start, to keep the ring symmetric), and give the links
+   in the top half class="up" in the HTML, so that their label goes above. */
+.links {
+  --n: 8;                 /* number of links */
+  --start: 90deg;         /* the first link sits at the bottom */
+  list-style: none; margin: 0; padding: 0;
+  position: absolute; inset: 0;   /* covers the ring, so 50% is its centre */
+}
+.links li { position: absolute; left: 50%; top: 50%; width: 0; height: 0; --a: calc(var(--start) + var(--i) * 360deg / var(--n)); }
+.links li:nth-child(1) { --i: 0; }  .links li:nth-child(2) { --i: 1; }  .links li:nth-child(3) { --i: 2; }
+.links li:nth-child(4) { --i: 3; }  .links li:nth-child(5) { --i: 4; }  .links li:nth-child(6) { --i: 5; }
+.links li:nth-child(7) { --i: 6; }  .links li:nth-child(8) { --i: 7; }  .links li:nth-child(9) { --i: 8; }
+.links li:nth-child(10) { --i: 9; }
+
+/* a round icon with a mono label: underneath, or above for the links in the top half (li.up) */
 .link {
-  display: grid;
-  justify-items: center;
-  gap: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
   text-decoration: none;
   color: var(--ink);
   border-radius: 12px;
+  /* centre the disc (not the whole link) on the point at angle --a */
+  transform: translate(calc(-50% + cos(var(--a)) * var(--r)), calc(var(--disc) / -2 + sin(var(--a)) * var(--r)));
+}
+.up .link {
+  flex-direction: column-reverse;
+  transform: translate(calc(-50% + cos(var(--a)) * var(--r)), calc(-100% + var(--disc) / 2 + sin(var(--a)) * var(--r)));
 }
 .link .disc {
-  width: 58px;
-  height: 58px;
+  width: var(--disc);
+  height: var(--disc);
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -52,17 +88,20 @@ main { display: grid; justify-items: center; gap: 28px; text-align: center; }
   border: 1px solid var(--rule);
   transition: border-color .15s, background-color .15s, color .15s;
 }
-.link svg { width: 26px; height: 26px; fill: currentColor; }
+.link svg { width: 24px; height: 24px; fill: currentColor; }
+.link .glyph { font: 600 15px/1 var(--mono); letter-spacing: -.02em; }   /* zbMATH has no brand icon */
 .link .label {
-  font: 500 11px/1 var(--mono);
+  font: 500 10.5px/1 var(--mono);
   letter-spacing: .09em;
   text-transform: uppercase;
   color: var(--muted);
+  white-space: nowrap;
 }
 .link:hover .disc, .link:focus-visible .disc { border-color: var(--structure); background: var(--structure-soft); color: var(--structure); }
 .link:hover .label, .link:focus-visible .label { color: var(--structure); }
 .link:focus-visible { outline-offset: 6px; }
 
+/* ---------- name ---------- */
 h1 {
   margin: 0;
   font-size: clamp(1.9rem, 1.4rem + 2vw, 2.5rem);
@@ -80,7 +119,10 @@ h1 {
 .role span { display: inline-block; }   /* wrap between the two parts, never inside one */
 
 @media (prefers-reduced-motion: reduce) { .link .disc { transition: none; } }
-@media (max-width: 380px) {
-  .link .disc { width: 50px; height: 50px; }
-  .link svg { width: 22px; height: 22px; }
+@media (max-width: 400px) {
+  .ring { --disc: 46px; --r: calc(var(--d) / 2 - 44px); }
+  .portrait { width: calc(var(--d) * .38); outline-offset: 6px; }
+  .link svg { width: 21px; height: 21px; }
+  .link .glyph { font-size: 13px; }
+  .link .label { font-size: 9.5px; }
 }
